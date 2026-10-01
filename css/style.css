@@ -950,3 +950,9 @@ button {
     font-size: 1.5rem;
   }
 }
+.product-card {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    display: flex !important;
+}
