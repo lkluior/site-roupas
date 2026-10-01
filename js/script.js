@@ -147,42 +147,66 @@ function initInfiniteCarousel() {
 // FILTROS POR MARCA
 // ==========================================
 function initBrandFilters() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const products = document.querySelectorAll('.product-card');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const selectedBrand = btn.getAttribute('data-brand').toLowerCase();
-      const productsGrid = document.querySelector('.products-grid');
-      
-      productsGrid.style.opacity = '0'; // Fade out
-      
-      setTimeout(() => {
-        products.forEach(card => {
-          const cardBrand = card.getAttribute('data-brand').toLowerCase();
-          if (selectedBrand === 'todas' || cardBrand === selectedBrand) {
-            card.style.display = 'flex'; 
-          } else {
-            card.style.display = 'none'; 
-          }
-        });
-        productsGrid.style.opacity = '1'; // Fade in
-      }, 300);
-    });
-  });
-
-  // INITIALIZE DISPLAY PROPERLY TO AVOID MOBILE BUG
-  // Força o relayout inicial para que navegadores móveis renderizem corretamente.
-  setTimeout(() => {
-    products.forEach(card => {
-      card.style.display = 'flex';
-    });
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const products = document.querySelectorAll('.product-card');
     const productsGrid = document.querySelector('.products-grid');
-    if (productsGrid) productsGrid.style.opacity = '1';
-  }, 100);
+
+    if (!productsGrid || products.length === 0) return;
+
+    // ==========================================
+    // MOSTRA TODOS OS PRODUTOS IMEDIATAMENTE
+    // ==========================================
+
+    products.forEach(card => {
+        card.style.display = 'flex';
+    });
+
+    productsGrid.style.opacity = '1';
+
+    // ==========================================
+    // FILTROS
+    // ==========================================
+
+    filterBtns.forEach(btn => {
+
+        btn.addEventListener('click', () => {
+
+            filterBtns.forEach(b => {
+                b.classList.remove('active');
+            });
+
+            btn.classList.add('active');
+
+            const selectedBrand =
+                (btn.getAttribute('data-brand') || 'Todas').toLowerCase();
+
+            productsGrid.style.opacity = '0';
+
+            setTimeout(() => {
+
+                products.forEach(card => {
+
+                    const cardBrand =
+                        (card.getAttribute('data-brand') || '').toLowerCase();
+
+                    if (
+                        selectedBrand === 'todas' ||
+                        cardBrand === selectedBrand
+                    ) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+
+                });
+
+                productsGrid.style.opacity = '1';
+
+            }, 300);
+
+        });
+
+    });
 }
 
 // ==========================================
