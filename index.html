@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modals.css">
 </head>
 <body>
     <header class="header">
@@ -24,6 +25,17 @@
                     <li><a href="#contato" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
+
+            <div class="user-cart-icons" style="display: flex; gap: 15px; margin-left: 15px;">
+                <button id="user-btn" aria-label="Minha Conta" style="background: none; border: none; cursor: pointer; color: white;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </button>
+                <button id="cart-btn" aria-label="Carrinho" style="background: none; border: none; cursor: pointer; color: white; position: relative;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <span id="cart-badge" style="position: absolute; top: -5px; right: -10px; background: #e74c3c; color: white; border-radius: 50%; font-size: 12px; padding: 2px 6px; display: none;">0</span>
+                </button>
+            </div>
+
             <a href="#" class="btn btn-primary btn-whatsapp-header whatsapp-btn">Falar no WhatsApp</a>
             <button class="menu-toggle hamburger" aria-label="Abrir menu">
                 <span></span><span></span><span></span>
@@ -79,7 +91,7 @@
                 <div class="product-grid products-grid">
                     
                     <!-- PRODUTO 1 -->
-                    <article class="product-card" data-brand="Nike">
+                    <article class="product-card" data-brand="Nike" data-price="89.90" data-sizes="P,M,G,GG">
                         <div class="product-image-container">
                             <img src="img/nikess.jpeg" alt="Conjunto Summer Vibes" class="product-img" loading="lazy">
                             <span class="product-tag">Nike</span>
@@ -87,19 +99,20 @@
                         <div class="product-details">
                             <div class="product-category">Conjunto</div>
                             <h3 class="product-name">Conjunto nike</h3>
+                            <p class="product-price" style="font-weight: 700; margin: 5px 0;">R$ 89,90</p>
                             <p class="product-desc">Conjunto nike treino .</p>
                             <div class="product-meta">
                                 <span>Cor: Preto/cinza</span>
                                 <span>Tamanhos: P, M, G</span>
                             </div>
-                            <button class="btn btn-primary product-btn whatsapp-btn" data-product="Conjunto nike">
+                            <button class="btn btn-primary product-btn " data-product="Conjunto nike">
                                 Tenho Interesse
                             </button>
                         </div>
                     </article>
 
                     <!-- PRODUTO 2 -->
-                    <article class="product-card" data-brand="Adidas">
+                    <article class="product-card" data-brand="Adidas" data-price="89.90" data-sizes="P,M,G,GG">
                         <div class="product-image-container">
                             <img src="img/adidas regata.jpeg" alt="Conjunto Street Classic" class="product-img" loading="lazy">
                             <span class="product-tag">Adidas</span>
@@ -107,19 +120,20 @@
                         <div class="product-details">
                             <div class="product-category">Camisa</div>
                             <h3 class="product-name">Regata Adidas</h3>
+                            <p class="product-price" style="font-weight: 700; margin: 5px 0;">R$ 89,90</p>
                             <p class="product-desc">Camisa regata com design moderno e confortável.</p>
                             <div class="product-meta">
                                 <span>Cor: Branco/Preto</span>
                                 <span>Tamanhos: P, M, G</span>
                             </div>
-                            <button class="btn btn-primary product-btn whatsapp-btn" data-product="Regata Adidas">
+                            <button class="btn btn-primary product-btn " data-product="Regata Adidas">
                                 Tenho Interesse
                             </button>
                         </div>
                     </article>
 
                     <!-- PRODUTO 3 -->
-                    <article class="product-card" data-brand="Puma">
+                    <article class="product-card" data-brand="Puma" data-price="89.90" data-sizes="P,M,G,GG">
                         <div class="product-image-container">
                             <img src="img/palmeiras.jpeg" alt="Conjunto Urban" class="product-img" loading="lazy">
                             <span class="product-tag">Puma</span>
@@ -127,19 +141,20 @@
                         <div class="product-details">
                             <div class="product-category">Camisa</div>
                             <h3 class="product-name">Camisa palmeiras</h3>
+                            <p class="product-price" style="font-weight: 700; margin: 5px 0;">R$ 89,90</p>
                             <p class="product-desc">primeira linha nacional</p>
                             <div class="product-meta">
                                 <span>Cor: branca</span>
                                 <span>Tamanhos: M</span>
                             </div>
-                            <button class="btn btn-primary product-btn whatsapp-btn" data-product="Camisa palmeiras">
+                            <button class="btn btn-primary product-btn " data-product="Camisa palmeiras">
                                 Tenho Interesse
                             </button>
                         </div>
                     </article>
 
                     <!-- PRODUTO 4 -->
-                    <article class="product-card" data-brand="Nike">
+                    <article class="product-card" data-brand="Nike" data-price="89.90" data-sizes="P,M,G,GG">
                         <div class="product-image-container">
                             <img src="img/WhatsApp Image 2026-09-11 at 14.14.47 (16).jpeg" alt="Conjunto nike" class="product-img" loading="lazy">
                             <span class="product-tag">Nike</span>
@@ -147,19 +162,20 @@
                         <div class="product-details">
                             <div class="product-category">Conjunto</div>
                             <h3 class="product-name">Conjunto nike</h3>
+                            <p class="product-price" style="font-weight: 700; margin: 5px 0;">R$ 89,90</p>
                             <p class="product-desc">conjunto nike treino</p>
                             <div class="product-meta">
                                 <span>Cor: Bege</span>
                                 <span>Tamanhos: P, M, G,</span>
                             </div>
-                            <button class="btn btn-primary product-btn whatsapp-btn" data-product="Camisa Logo Box">
+                            <button class="btn btn-primary product-btn " data-product="Camisa Logo Box">
                                 Tenho Interesse
                             </button>
                         </div>
                     </article>
 
                     <!-- PRODUTO 5 -->
-                    <article class="product-card" data-brand="adidas">
+                    <article class="product-card" data-brand="adidas" data-price="89.90" data-sizes="P,M,G,GG">
                         <div class="product-image-container">
                             <img src="img/adidas azul.jpeg" alt="Camisa Oversized" class="product-img" loading="lazy">
                             <span class="product-tag">adidas</span>
@@ -167,19 +183,20 @@
                         <div class="product-details">
                             <div class="product-category">Camisa</div>
                             <h3 class="product-name">Camisa Adidas</h3>
+                            <p class="product-price" style="font-weight: 700; margin: 5px 0;">R$ 89,90</p>
                             <p class="product-desc">para máximo conforto.</p>
                             <div class="product-meta">
                                 <span>Cor: azul/Bege/branca</span>
                                 <span>Tamanhos: P,M, G,</span>
                             </div>
-                            <button class="btn btn-primary product-btn whatsapp-btn" data-product="Camisa Adidas">
+                            <button class="btn btn-primary product-btn " data-product="Camisa Adidas">
                                 Tenho Interesse
                             </button>
                         </div>
                     </article>
 
                     <!-- PRODUTO 6 -->
-                    <article class="product-card" data-brand="nike">
+                    <article class="product-card" data-brand="nike" data-price="89.90" data-sizes="P,M,G,GG">
                         <div class="product-image-container">
                             <img src="img/laranja.jpeg" alt="Camisa Graphic" class="product-img" loading="lazy">
                             <span class="product-tag">nike</span>
@@ -187,19 +204,20 @@
                         <div class="product-details">
                             <div class="product-category">Short</div>
                             <h3 class="product-name">short nike</h3>
+                            <p class="product-price" style="font-weight: 700; margin: 5px 0;">R$ 89,90</p>
                             <p class="product-desc">Confortável e moderno</p>
                             <div class="product-meta">
                                 <span>Cor: laranja</span>
                                 <span>Tamanhos: M, G</span>
                             </div>
-                            <button class="btn btn-primary product-btn whatsapp-btn" data-product="short nike">
+                            <button class="btn btn-primary product-btn " data-product="short nike">
                                 Tenho Interesse
                             </button>
                         </div>
                     </article>
 
                     <!-- PRODUTO 7 -->
-                    <article class="product-card" data-brand="Adidas">
+                    <article class="product-card" data-brand="Adidas" data-price="89.90" data-sizes="P,M,G,GG">
                         <div class="product-image-container">
                             <img src="img/adidas ui.jpeg" alt="Short Sport Mesh" class="product-img" loading="lazy">
                             <span class="product-tag">Adidas</span>
@@ -207,19 +225,20 @@
                         <div class="product-details">
                             <div class="product-category">conjunto</div>
                             <h3 class="product-name">Conjunto Adidas </h3>
+                            <p class="product-price" style="font-weight: 700; margin: 5px 0;">R$ 89,90</p>
                             <p class="product-desc">Conjunto confortável e moderno full black</p>
                             <div class="product-meta">
                                 <span>Cor: Preto</span>
                                 <span>Tamanhos: P, M, G, GG</span>
                             </div>
-                            <button class="btn btn-primary product-btn whatsapp-btn" data-product="Conjunto Adidas ">
+                            <button class="btn btn-primary product-btn " data-product="Conjunto Adidas ">
                                 Tenho Interesse
                             </button>
                         </div>
                     </article>
 
                     <!-- PRODUTO 8 -->
-                    <article class="product-card" data-brand="nike">
+                    <article class="product-card" data-brand="nike" data-price="89.90" data-sizes="P,M,G,GG">
                         <div class="product-image-container">
                             <img src="img/shortsnikess.jpeg" alt="Short Cargo Casual" class="product-img" loading="lazy">
                             <span class="product-tag">nike</span>
@@ -227,19 +246,20 @@
                         <div class="product-details">
                             <div class="product-category">Short</div>
                             <h3 class="product-name">Short nike</h3>
+                            <p class="product-price" style="font-weight: 700; margin: 5px 0;">R$ 89,90</p>
                             <p class="product-desc">Nike premium </p>
                             <div class="product-meta">
                                 <span>Cor: Verde Militar</span>
                                 <span>Tamanhos: 38 ao 44</span>
                             </div>
-                            <button class="btn btn-primary product-btn whatsapp-btn" data-product="Short Cargo Casual">
+                            <button class="btn btn-primary product-btn" data-product="Short Cargo Casual">
                                 Tenho Interesse
                             </button>
                         </div>
                     </article>
 
                     <!-- PRODUTO 9 -->
-                    <article class="product-card" data-brand="Nike">
+                    <article class="product-card" data-brand="Nike" data-price="89.90" data-sizes="P,M,G,GG">
                         <div class="product-image-container">
                             <img src="img/uibeg.jpeg" alt="Short Moletom Comfort" class="product-img" loading="lazy">
                             <span class="product-tag">Nike</span>
@@ -247,19 +267,20 @@
                         <div class="product-details">
                             <div class="product-category">conjunto</div>
                             <h3 class="product-name">Conjunto nike</h3>
+                            <p class="product-price" style="font-weight: 700; margin: 5px 0;">R$ 89,90</p>
                             <p class="product-desc">Conjunto nike premium treino</p>
                             <div class="product-meta">
                                 <span>Cor: Cinza</span>
                                 <span>Tamanhos: P, M, G</span>
                             </div>
-                            <button class="btn btn-primary product-btn whatsapp-btn" data-product="Short Moletom Comfort">
+                            <button class="btn btn-primary product-btn " data-product="Short Moletom Comfort">
                                 Tenho Interesse
                             </button>
                         </div>
                     </article>
 
                     <!-- PRODUTO 10 -->
-                    <article class="product-card" data-brand="adidas">
+                    <article class="product-card" data-brand="adidas" data-price="89.90" data-sizes="P,M,G,GG">
                         <div class="product-image-container">
                             <img src="img/conjuntoad.jpeg" alt="Bucket Hat Classic" class="product-img" loading="lazy">
                             <span class="product-tag">adidas</span>
@@ -267,19 +288,20 @@
                         <div class="product-details">
                             <div class="product-category">conjunto Adidas</div>
                             <h3 class="product-name">Conjunto Adidas listrada</h3>
+                            <p class="product-price" style="font-weight: 700; margin: 5px 0;">R$ 89,90</p>
                             <p class="product-desc">Conjunto confortável e moderno com listras.</p>
                             <div class="product-meta">
                                 <span>Cor: Preto</span>
                                 <span>Tamanho: M</span>
                             </div>
-                            <button class="btn btn-primary product-btn whatsapp-btn" data-product="Bucket Hat Classic">
+                            <button class="btn btn-primary product-btn " data-product="Bucket Hat Classic">
                                 Tenho Interesse
                             </button>
                         </div>
                     </article>
 
                     <!-- PRODUTO 11 -->
-                    <article class="product-card" data-brand="nike">
+                    <article class="product-card" data-brand="nike" data-price="89.90" data-sizes="P,M,G,GG">
                         <div class="product-image-container">
                             <img src="img/conjunto.jpeg" alt="Boné Snapback Heritage" class="product-img" loading="lazy">
                             <span class="product-tag">nike</span>
@@ -287,19 +309,20 @@
                         <div class="product-details">
                             <div class="product-category"> Regata nike</div>
                             <h3 class="product-name">Regata nike</h3>
+                            <p class="product-price" style="font-weight: 700; margin: 5px 0;">R$ 89,90</p>
                             <p class="product-desc">Regata americana nike SB</p>
                             <div class="product-meta">
                                 <span>Cor: Preto/Vermelho</span>
                                 <span>Tamanho: Único</span>
                             </div>
-                            <button class="btn btn-primary product-btn whatsapp-btn" data-product="Boné Snapback Heritage">
+                            <button class="btn btn-primary product-btn " data-product="Boné Snapback Heritage">
                                 Tenho Interesse
                             </button>
                         </div>
                     </article>
 
                     <!-- PRODUTO 12 -->
-                    <article class="product-card" data-brand="nike">
+                    <article class="product-card" data-brand="nike" data-price="89.90" data-sizes="P,M,G,GG">
                         <div class="product-image-container">
                             <img src="img/meias.jpeg" alt="Gorro Beanie" class="product-img" loading="lazy">
                             <span class="product-tag">nike</span>
@@ -307,12 +330,13 @@
                         <div class="product-details">
                             <div class="product-category">meias nike</div>
                             <h3 class="product-name">meias nike</h3>
+                            <p class="product-price" style="font-weight: 700; margin: 5px 0;">R$ 89,90</p>
                             <p class="product-desc">Meias nike cano alto Premium</p>
                             <div class="product-meta">
                                 <span>Cor: Branco/Preto</span>
                                 <span>Tamanho: G</span>
                             </div>
-                            <button class="btn btn-primary product-btn whatsapp-btn" data-product="Gorro Beanie">
+                            <button class="btn btn-primary product-btn " data-product="Gorro Beanie">
                                 Tenho Interesse
                             </button>
                         </div>
@@ -391,7 +415,7 @@
                     <p style="margin-top: 15px;">Sua loja exclusiva de moda CAsports.</p>
                 </div>
                 <div class="footer-col">
-                    <h3>Links Rápidos</h3>
+                    <h3 class="foter-h">Links Rápidos</h3>
                     <ul style="margin-top: 15px;">
                         <li><a href="#inicio">Início</a></li>
                         <li><a href="#roupas">Roupas</a></li>
@@ -400,7 +424,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>Contato</h3>
+                    <h3 class="foter-h">Contato</h3>
                     <ul style="margin-top: 15px;">
                         <li><a href="https://wa.me/5579981246335" class="whatsapp-btn" target="_blank">WhatsApp</a></li>
                         <li><span>Instagram: @ca.sportsaju</span></li>
@@ -420,5 +444,79 @@
     </a>
 
     <script src="js/script.js" defer></script>
+    <script src="js/api.js" defer></script>
+
+    <!-- MODAIS DO SISTEMA -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Modal Login/Cadastro -->
+    <dialog id="auth-modal" class="custom-modal">
+        <div class="modal-content auth-content">
+            <button class="modal-close" aria-label="Fechar">&times;</button>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-target="login-form">Login</button>
+                <button class="auth-tab" data-target="register-form">Cadastro</button>
+            </div>
+            <form id="login-form" class="auth-form active">
+                <input type="email" id="login-email" placeholder="Seu E-mail" required>
+                <input type="password" id="login-password" placeholder="Sua Senha" required>
+                <button type="submit" class="btn btn-primary w-100">Entrar</button>
+            </form>
+            <form id="register-form" class="auth-form">
+                <input type="text" id="reg-name" placeholder="Nome Completo" required>
+                <input type="email" id="reg-email" placeholder="E-mail" required>
+                <input type="password" id="reg-password" placeholder="Senha" required>
+                <button type="submit" class="btn btn-primary w-100">Criar Conta</button>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Modal de Tamanho/Quantidade -->
+    <dialog id="size-modal" class="custom-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Fechar">&times;</button>
+            <h3 id="size-modal-product-name" style="margin-bottom: 10px;">Produto</h3>
+            <p id="size-modal-product-price" style="margin-bottom: 20px; font-weight: bold;">R$ 0,00</p>
+            <label style="display:block; margin-bottom: 10px;">Tamanho:</label>
+            <div id="size-options" class="size-options"></div>
+            <label style="display:block; margin-top: 20px; margin-bottom: 10px;">Quantidade:</label>
+            <div class="quantity-selector">
+                <button type="button" id="qty-minus">-</button>
+                <input type="number" id="qty-input" value="1" min="1" max="99" readonly>
+                <button type="button" id="qty-plus">+</button>
+            </div>
+            <button id="add-to-cart-btn" class="btn btn-primary w-100" style="margin-top: 25px;">Adicionar ao Carrinho</button>
+        </div>
+    </dialog>
+
+    <!-- Modal Carrinho -->
+    <dialog id="cart-modal" class="custom-modal right-sidebar">
+        <div class="modal-content cart-content">
+            <button class="modal-close" aria-label="Fechar">&times;</button>
+            <h2>Seu Carrinho</h2>
+            <div id="cart-items" class="cart-items"></div>
+            <div class="cart-footer">
+                <div class="cart-total-box">
+                    <span>Total:</span>
+                    <span id="cart-total-value">R$ 0,00</span>
+                </div>
+                <button id="checkout-btn" class="btn btn-primary w-100">Enviar Pedido</button>
+            </div>
+        </div>
+    </dialog>
+    
+    <!-- Modal Área do Usuário -->
+    <dialog id="user-modal" class="custom-modal">
+        <div class="modal-content user-content">
+            <button class="modal-close" aria-label="Fechar">&times;</button>
+            <h2>Minha Conta</h2>
+            <p><strong>Nome:</strong> <span id="user-info-name"></span></p>
+            <p><strong>E-mail:</strong> <span id="user-info-email"></span></p>
+            <button id="logout-btn" class="btn btn-primary" style="margin-top: 15px; background: #e74c3c;">Sair da Conta</button>
+            <h3 style="margin-top: 30px; margin-bottom: 15px;">Meus Pedidos</h3>
+            <div id="user-orders" class="orders-list"></div>
+        </div>
+    </dialog>
+
 </body>
 </html>

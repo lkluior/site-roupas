@@ -1,5 +1,5 @@
 /**
- * STREET VIBE - Premium Streetwear Catalog
+ * CA Sports- Premium CA Sports Catalog
  * JS Principal - Vanilla JS
  */
 
@@ -120,7 +120,7 @@ function initScrollReveal() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0 });
   revealElements.forEach(el => observer.observe(el));
 }
 

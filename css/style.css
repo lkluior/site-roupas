@@ -639,8 +639,8 @@ button {
 
 .gallery-item img {
   width: 100%;
-  height: auto;
   display: block;
+  height: auto;
   transition: transform var(--transition-slow);
 }
 
@@ -792,6 +792,10 @@ button {
   background-color: var(--color-bg-footer);
   color: #cccccc;
   padding: var(--space-xl) 0 var(--space-md);
+}
+
+.foter-h{
+  color: #FFFFFF;
 }
 
 .footer-grid {
