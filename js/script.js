@@ -173,6 +173,16 @@ function initBrandFilters() {
       }, 300);
     });
   });
+
+  // INITIALIZE DISPLAY PROPERLY TO AVOID MOBILE BUG
+  // Força o relayout inicial para que navegadores móveis renderizem corretamente.
+  setTimeout(() => {
+    products.forEach(card => {
+      card.style.display = 'flex';
+    });
+    const productsGrid = document.querySelector('.products-grid');
+    if (productsGrid) productsGrid.style.opacity = '1';
+  }, 100);
 }
 
 // ==========================================
