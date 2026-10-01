@@ -154,14 +154,18 @@ function initBrandFilters() {
     if (!productsGrid || products.length === 0) return;
 
     // ==========================================
-    // MOSTRA TODOS OS PRODUTOS IMEDIATAMENTE
+    // MOSTRA TODOS OS PRODUTOS IMEDIATAMENTE (FORÇANDO REFLOW)
     // ==========================================
 
-    products.forEach(card => {
-        card.style.display = 'flex';
-    });
-
-    productsGrid.style.opacity = '1';
+    const activeBtn = document.querySelector('.filter-btn.active');
+    if (activeBtn) {
+        setTimeout(() => activeBtn.click(), 50);
+    } else {
+        products.forEach(card => {
+            card.style.display = 'flex';
+        });
+        productsGrid.style.opacity = '1';
+    }
 
     // ==========================================
     // FILTROS
